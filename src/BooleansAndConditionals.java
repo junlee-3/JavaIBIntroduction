@@ -1,3 +1,5 @@
+import jets.Jets;
+
 import java.util.Scanner;
 
 public class BooleansAndConditionals {
@@ -67,6 +69,27 @@ public class BooleansAndConditionals {
         if ((num1*num1) + (num2*num2) == (num3*num3)) {
             System.out.println(num1 + " and" + " " + num2 + " are a pythagorean triple");
         }
+    }
 
+    public static void stringComparisons() {
+        String s1 = "Hello";
+        String s2 = "Hello, World!";
+
+        s1.equals(s2);
+        s1.contains(s2);
+        s1.endsWith(s2);
+        s1.startsWith(s2);
+        s1.isEmpty();
+
+        s1.compareTo(s2);
+    }
+
+    public static void passwordChecker() {
+        String password = Jets.inputString("Enter your password");
+        if(password.length() > 5 && password.length() < 15 && password.matches(".*[a-zA-Z].*") && password.matches(".*[0-9].*")) {
+            System.out.println("Your password is valid");
+        } else {
+            System.out.println("Your password is invalid");
+        }
     }
 }
