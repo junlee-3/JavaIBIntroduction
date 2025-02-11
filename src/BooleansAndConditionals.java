@@ -86,10 +86,20 @@ public class BooleansAndConditionals {
 
     public static void passwordChecker() {
         String password = Jets.inputString("Enter your password");
-        if(password.length() > 5 && password.length() < 15 && password.matches(".*[a-zA-Z].*") && password.matches(".*[0-9].*")) {
+        if(password.length() > 5 && password.length() < 16 && password.matches(".*[a-zA-Z].*") && password.matches(".*[0-9].*")) {
             System.out.println("Your password is valid");
         } else {
             System.out.println("Your password is invalid");
+        }
+    }
+
+    public static void leapYear() {
+        int year = 2000;
+
+        if (year % 4 == 0 && year % 100 !=0 || year % 400 == 0) {
+            System.out.println(year + " is a leap year");
+        } else {
+            System.out.println(year + " is not a leap year");
         }
     }
 }
