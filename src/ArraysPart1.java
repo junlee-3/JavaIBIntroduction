@@ -2,7 +2,8 @@ import java.util.Arrays;
 
 public class ArraysPart1 {
     public static void main(String[] args) {
-        exercise1();
+        homework();
+        homework2();
 
     }
 
@@ -50,5 +51,27 @@ public class ArraysPart1 {
 
 
 
+    }
+
+    public static void homework() {
+        int n = 5;
+        int size = 2 * n + 1;
+        int[] numbers = new int[size];
+        for (int i = 0; i <= n; i++) {
+            numbers[i] = i;
+            numbers[size - 1 - i] = i;
+        }
+        System.out.println(Arrays.toString(numbers));
+    }
+
+    public static void homework2() {
+        int value = 3;
+        int max = 15;
+        int size = max/value;
+        int[] multiples = new int[size];
+        for (int i = 0; i < (size); i++) {
+            multiples[i] = value*(i+1);
+        }
+        System.out.println(Arrays.toString(multiples));
     }
 }
