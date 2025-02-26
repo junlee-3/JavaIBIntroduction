@@ -15,8 +15,8 @@ public class Functions {
 
     public static double getAverage(int[] integers) {
         int sum = 0;
-        for(int i =0; i<integers.length; i++) {
-            sum += integers[i];
+        for (int integer : integers) {
+            sum += integer;
         }
         return (double) sum /integers.length;
     }
@@ -70,11 +70,7 @@ public class Functions {
     }
 
     public static boolean passwordRequirements(String password) {
-        if(countAlphabet(password) > 8 && findNDigits(password) >= 3) {
-            return true;
-        } else {
-            return false;
-        }
+        return countAlphabet(password) > 8 && findNDigits(password) >= 3;
     }
 
 
