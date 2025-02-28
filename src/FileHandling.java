@@ -12,8 +12,7 @@ public class FileHandling {
             throw new IOException();
         }
         readFile("src/example.txt");
-
-
+        writeFibbonaci();
     }
 
     public static void readFile(String location) throws IOException {
@@ -25,6 +24,23 @@ public class FileHandling {
         } catch (IOException e) {
             throw new IOException();
         }
+    }
+
+    public static void writeFibbonaci() throws IOException {
+         Path path = Paths.get("src/output.txt");
+         try {
+             Files.writeString(path, fibbonaci(100) + "");
+         } catch (IOException e) {
+             throw new IOException();
+         }
+    }
+
+    public static int fibbonaci(int n) {
+         if (n == 0 || n == 1) {
+             return n;
+         } else {
+             return fibbonaci(n-1) + fibbonaci(n- 2);
+         }
     }
 }
 
