@@ -11,18 +11,18 @@ public class SortingAlgorithms {
         boolean swapped = true;
 
         while (swapped) {
+            int lastIndex = arr.length - 1;
             swapped = false;
-            for (int i = 0; i < arr.length - 1; i++) {
+            for (int i = 0; i < lastIndex; i++) {
                 if (arr[i] > arr[i + 1]) {
-                    int temp = arr[i+1];
-                    arr[i+1] = arr[i];
+                    int temp = arr[i + 1];
+                    arr[i + 1] = arr[i];
                     arr[i] = temp;
-
                     swapped = true;
                 }
+                lastIndex--;
             }
         }
-
         System.out.println(Arrays.toString(arr));
     }
 }
