@@ -3,12 +3,13 @@ import java.util.Arrays;
 public class SortingAlgorithms {
     public static void main(String[] args) {
         int [] arr = {5, 3, 8, 1};
-        bubbleSort(arr);
+        practicePaper(arr);
 
     }
 
     public static void bubbleSort(int[] arr) {
         boolean swapped = true;
+        int test = 1;
 
         while (swapped) {
             int lastIndex = arr.length - 1;
@@ -21,7 +22,29 @@ public class SortingAlgorithms {
                     swapped = true;
                 }
                 lastIndex--;
+                test++;
             }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void practicePaper(int[] arr) {
+        int limit = 4;
+        boolean flag = true;
+
+        while(flag) {
+            flag = false;
+            int counter = 0;
+
+            if (counter < limit - 1) {
+                if (arr[counter] > arr[counter + 1]) {
+                    int temp = arr[counter];
+                    arr[counter] = arr[counter + 1];
+                    arr[counter + 1] = temp;
+                    flag = true;
+                }
+            }
+            counter++;
         }
         System.out.println(Arrays.toString(arr));
     }
