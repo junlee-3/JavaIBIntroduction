@@ -1,3 +1,4 @@
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.*;
@@ -5,7 +6,10 @@ import jets.Jets;
 
 public class collectionsAndLists {
     public static void main(String[] args) {
-        lists();
+        List<Integer> num1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+        List<Integer> num2 = new ArrayList<>(Arrays.asList(6, 7, 8, 9, 10));
+
+        mergeTo(num1, num2);
 
     }
 
@@ -39,13 +43,13 @@ public class collectionsAndLists {
     public static void lists() {
         List<Integer> list = new ArrayList<>();
 
-        for (int i = 0; i <= 50; i+=2) {
+        for (int i = 0; i <= 100; i+=2) {
             list.add(i);
         }
         System.out.println(list);
 
         for (int i = 0; i <= 10; i++) {
-            list.remove(i);
+            list.removeLast();
         }
         System.out.println(list);
 
@@ -58,5 +62,14 @@ public class collectionsAndLists {
 
         list.clear();
         System.out.println(list);
+    }
+
+    public static void mergeTo(List<Integer> baseList, List<Integer> listToAdd) {
+        if (!listToAdd.isEmpty()) {
+            baseList.addAll(listToAdd);
+            System.out.println(baseList);
+        } else {
+            System.out.println("List is empty");
+        }
     }
 }
